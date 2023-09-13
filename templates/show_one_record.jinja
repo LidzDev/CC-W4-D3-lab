@@ -6,16 +6,15 @@
             <input type="submit" name="delete_record" value="Delete Record"/>
         </form>
     </div>
-
-        <div>
-<form name="update_record" action="/records/{{record.id}}" method="post">
-    <label for="record_name">Record name</label>
-    <input type="text" name="record_name" id="record_name" required="yes" value="{{record.record_name}}"/>
-    <label for="artist_name">Artist name</label>
-    <input type="text" name="artist_name" id="artist_name" required="yes" value="{{record.artist_name}}"/>
-    <label for="price">Price in pence</label>
-    <input type="number" name="price" id="price" required="yes" value="{{record.price}}"/>   
-    <input type="submit" value="Edit record"/>   
-</form>
-</div>
+    <div>
+        <form name="update_record" action="/records/{{record.id}}" method="post">
+            <label for="record_name">Record name</label>
+            <input type="text" name="record_name" id="record_name" required="yes" value="{{record.record_name}}"/>
+            <label for="artist_name">Artist name</label>
+            <input type="text" name="artist_name" id="artist_name" required="yes" value="{{record.artist_name}}"/>
+            <label for="price">Price in pence</label>
+            <input type="number" name="price" id="price" required="yes" value="{{record.price}}"/>   
+            <input type="submit" value="Edit record"/>   
+        </form>
+    </div>
 {% endblock %}
