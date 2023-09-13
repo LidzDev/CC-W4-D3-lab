@@ -11,6 +11,9 @@ migrate = Migrate(app, db)
 
 from models.staff import Staff 
 from models.record import Record
+from controllers.record_controller import records_blueprint
+
+app.register_blueprint(records_blueprint)
 
 @app.route("/")
 def home():

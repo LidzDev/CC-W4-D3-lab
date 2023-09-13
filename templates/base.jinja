@@ -1,0 +1,20 @@
+    <head>
+     <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <header>
+             <h1>{{ title }}</h1>
+             <nav>
+                <ul>
+                    <li><a href="/records">Home</a></li>
+                    <li><a href="/records/add">Add record</a></li>
+                </ul>
+                    </nav>
+        </header>
+    {% block content %}
+    {% endblock %}
+    <hr>
+    <footer><a href="https://www.github.com/LidzDev">Lydia's github</a> | <a href="https://github.com/sinking3">Ben's github</a> | <a href="https://www.github.com/LidzDev/CC-W3-D5-lab">This project on Github</a> </footer>
+    </body>
+</html>

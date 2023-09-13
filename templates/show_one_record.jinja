@@ -1,0 +1,31 @@
+{% extends "base.jinja" %} {% block content %}
+<h2>Record Details</h2>
+<p>Record Name: {{record.record_name}} Artist: {{record.artist_name}}</p>
+        <div id="actions">
+                <form name="edit_record" action="/records/{{record.id}}" method="post">
+                    <input type="submit" value="Edit Record"/>
+                </form>
+                <form name="delete_record" action="/records/delete/{{record.id}}" method="post">
+                    <input type="submit" name="delete_record" value="Delete Record"/>
+                </form>
+        </div>
+
+        <div>
+{# <form name="update_record" action="/records/" method="post">
+    <label for="record_name">Record name</label>
+    <input type="text" name="record_name" id="record_name" required="yes"/>
+    <label for="artist_name">Artist name</label>
+    <input type="text" name="artist_name" id="artist_name" required="yes"/>
+    {# <label for="genre">genre</label> #}
+    {# <select name="genre" id="genre" required="yes">
+        <option value="Programming">Programming</option>
+        <option value="Science Fiction">Sci-Fi</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Mountaineering">Mountaineering</option>
+    </select> #}
+    <label for="price">Price in pence</label>
+    <input type="number" name="price" id="price" required="yes"/>   
+    <input type="submit" value="Add Record"/>   
+</form> #}
+</div>
+{% endblock %}

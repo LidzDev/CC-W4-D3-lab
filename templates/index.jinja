@@ -1,0 +1,6 @@
+{% extends "base.jinja" %} {% block content %}
+<ul>
+    {%for record in records%}
+        <li>Record Name: <a href="/records/{{record.id}}">{{record.record_name}}</a> Artist: {{record.artist_name}}</li>
+    {%endfor%}
+{% endblock %}
