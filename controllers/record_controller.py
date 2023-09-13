@@ -32,5 +32,17 @@ def save_record():
 
 @records_blueprint.route("/records/<int:id>", methods=["POST"])
 def update_record(id):
+    record = Record.query.get(id)
+    record.record_name = request.form["record_name"]
+    record.artist_name = request.form["artist_name"]
+    record.price = request.form["price"]
+    db.session.commit()
     redirect_string = "/records/" + str(id)
     return redirect(redirect_string)
+
+@records_blueprint.route("/records/delete/<int:id>", methods=["POST"])
+def remove_record(id):
+    record = Record.query.get(id)
+    db.session.delete(record)
+    db.session.commit()
+    return redirect("/records")
